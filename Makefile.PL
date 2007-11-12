@@ -5,9 +5,13 @@ use inc::Module::Install;
 name           'Tie-Handle-TtyRec';
 all_from       'lib/Tie/Handle/TtyRec.pm';
 
-requires       '';
+requires       'parent';
+requires       'Symbol';
+requires       'Carp';
+requires       'Time::HiRes';
 
 build_requires 'Test::More';
+build_requires 'Term::TtyRec::Plus';
 
 auto_install;
 WriteAll;
