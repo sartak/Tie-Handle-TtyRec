@@ -91,7 +91,7 @@ Shawn M Moore, C<< <sartak at gmail.com> >>
 No known bugs.
 
 Please report any bugs through RT: email
-C<bug-tie-handle-ttyrec at rt.cpan.org>, or browse to
+C<bug-tie-handle-ttyrec at rt.cpan.org>, or browse
 L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Tie-Handle-TtyRec>.
 
 =head1 SUPPORT
