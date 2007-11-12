@@ -1,6 +1,22 @@
 Tie-Handle-TtyRec 0.01
 
-Tie::Handle::TtyRec is
+A ttyrec is a format used for recording terminal sessions. Notably, practically
+all NetHack games are recorded using ttyrecs. ttyrecs include precise timing
+data and can be a little fiddly. This module lets you focus on your
+application, instead of making sure your ttyrec headers are perfect.
+
+The usual way to use this module is through its C<new> interface. It will
+clobber the file you decide to record to. A way of allowing you to instead
+append will be included in a future version.
+
+Each argument to print will be put into its own ttyrec frame, using the current
+time. So, the following will create three separate frames,
+
+    print $handle "foo", "bar", "baz";
+
+The following will create only one frame,
+
+    print $handle "foo" . "bar" . "baz";
 
 MAJOR CHANGES
     0.01: first version
