@@ -42,7 +42,7 @@ sub CLOSE {
 
 =head1 NAME
 
-Tie::Handle::TtyRec - easily create ttyrecs
+Tie::Handle::TtyRec - write a ttyrec
 
 =head1 VERSION
 
@@ -55,15 +55,32 @@ our $VERSION = '0.01';
 =head1 SYNOPSIS
 
     use Tie::Handle::TtyRec;
-    do_stuff();
+    my $handle = Tie::Handle::TtyRec->new("foo.ttyrec");
+    print $handle "hello", "world";
 
 =head1 DESCRIPTION
 
+A ttyrec is a format used for recording terminal sessions. Notably, practically
+all NetHack games are recorded using ttyrecs. ttyrecs include precise timing
+data and can be a little fiddly. This module lets you focus on your
+application, instead of making sure your ttyrec headers are perfect.
 
+The usual way to use this module is through its C<new> interface. It will
+clobber the file you decide to record to. A way of allowing you to instead
+append will be included in a future version.
+
+Each argument to print will be put into its own ttyrec frame, using the current
+time. So, the following will create three separate frames,
+
+    print $handle "foo", "bar", "baz";
+
+The following will create only one frame,
+
+    print $handle "foo" . "bar" . "baz";
 
 =head1 SEE ALSO
 
-L<Foo::Bar>
+L<Term::TtyRec>, L<Term::TtyRec::Plus>
 
 =head1 AUTHOR
 
