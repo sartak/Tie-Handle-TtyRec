@@ -1,0 +1,44 @@
+Tie-Handle-TtyRec 0.01
+
+Tie::Handle::TtyRec is
+
+MAJOR CHANGES
+    0.01: first version
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+    perl Makefile.PL
+    make
+    make test
+    make install
+
+SUPPORT AND DOCUMENTATION
+
+After installing, you can find documentation for this module with the perldoc
+command.
+
+    perldoc Tie::Handle::TtyRec
+
+You can also look for information at:
+
+    Search CPAN
+        http://search.cpan.org/dist/Tie-Handle-TtyRec
+
+    CPAN Request Tracker:
+        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Tie-Handle-TtyRec
+
+    AnnoCPAN, annotated CPAN documentation:
+        http://annocpan.org/dist/Tie-Handle-TtyRec
+
+    CPAN Ratings:
+        http://cpanratings.perl.org/d/Tie-Handle-TtyRec
+
+COPYRIGHT AND LICENSE
+
+Copyright (C) 2007 Shawn M Moore
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+
