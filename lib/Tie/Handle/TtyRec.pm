@@ -2,12 +2,46 @@
 package Tie::Handle::TtyRec;
 use strict;
 use warnings;
+use parent 'Tie::Handle';
 
+use Symbol;
+use Time::HiRes 'gettimeofday';
+use Carp 'croak';
 
+sub new {
+    my ($class, $filename) = @_;
+    my $symbol = Symbol::gensym;
+
+    tie(*$symbol, __PACKAGE__, $filename);
+
+    return $symbol;
+}
+
+sub TIEHANDLE {
+    my ($class, $filename) = @_;
+
+    open(my $self, '>', $filename) or croak "Unable to open $filename for writing: $!";
+
+    bless $self, (ref $class || $class);
+}
+
+sub READ {
+    croak "Cannot read from a Tie::Handle::TtyRec::Write";
+}
+
+sub PRINT {
+    my $self = shift;
+    print {$self} map {pack('VVV', gettimeofday, length) . $_} @_;
+}
+
+sub CLOSE {
+    my $self = shift;
+    close $self;
+}
 
 =head1 NAME
 
-Tie::Handle::TtyRec - ???
+Tie::Handle::TtyRec - easily create ttyrecs
 
 =head1 VERSION
 
