@@ -20,7 +20,8 @@ sub new {
 sub TIEHANDLE {
     my ($class, $filename) = @_;
 
-    open(my $self, '>', $filename) or croak "Unable to open $filename for writing: $!";
+    open(my $self, '>', $filename)
+        or croak "Unable to open $filename for writing: $!";
 
     bless $self, (ref $class || $class);
 }
@@ -31,7 +32,7 @@ sub READ {
 
 sub PRINT {
     my $self = shift;
-    print {$self} map {pack('VVV', gettimeofday, length) . $_} @_;
+    print {$self} map {pack('VVV', gettimeofday, length), $_} @_;
 }
 
 sub CLOSE {
