@@ -1,4 +1,4 @@
-Tie-Handle-TtyRec 0.01
+Tie-Handle-TtyRec 0.02
 
 A ttyrec is a format used for recording terminal sessions. Notably, practically
 all NetHack games are recorded using ttyrecs. ttyrecs include precise timing

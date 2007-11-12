@@ -46,11 +46,11 @@ Tie::Handle::TtyRec - write a ttyrec
 
 =head1 VERSION
 
-Version 0.01 released 11 Nov 07
+Version 0.02 released ???
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 SYNOPSIS
 
