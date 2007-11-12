@@ -9,6 +9,7 @@ requires       'parent';
 requires       'Symbol';
 requires       'Carp';
 requires       'Time::HiRes';
+requires       'Tie::Handle';
 
 build_requires 'Test::More';
 build_requires 'Term::TtyRec::Plus';
