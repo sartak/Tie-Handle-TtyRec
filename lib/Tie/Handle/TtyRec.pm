@@ -32,7 +32,8 @@ sub READ {
 
 sub PRINT {
     my $self = shift;
-    print {$self} map {pack('VVV', gettimeofday, length), $_} @_;
+    local $\;
+    $self->print(map {pack('VVV', gettimeofday, length), $_} @_);
 }
 
 sub CLOSE {
