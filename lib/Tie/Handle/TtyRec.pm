@@ -23,6 +23,8 @@ sub TIEHANDLE {
     open(my $self, '>', $filename)
         or croak "Unable to open $filename for writing: $!";
 
+    $self->autoflush(1);
+
     bless $self, (ref $class || $class);
 }
 
