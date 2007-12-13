@@ -5,6 +5,8 @@ use Test::More tests => 13;
 use Tie::Handle::TtyRec;
 use Term::TtyRec::Plus;
 
+$\ = "\n";
+
 {
     no warnings 'redefine';
     my $i = 0;
