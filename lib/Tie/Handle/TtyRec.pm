@@ -52,7 +52,7 @@ Tie::Handle::TtyRec - write a ttyrec
 
 =head1 VERSION
 
-Version 0.02 released ???
+Version 0.02 released 13 Dec 07
 
 =cut
 
