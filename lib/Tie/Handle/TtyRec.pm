@@ -34,8 +34,11 @@ sub READ {
 
 sub PRINT {
     my $self = shift;
+
     local $\;
-    $self->print(map {pack('VVV', gettimeofday, length), $_} @_);
+    print {$self} map { pack('VVV', gettimeofday, length), $_ }
+                  grep { length }
+                  @_;
 }
 
 sub CLOSE {
