@@ -4,6 +4,7 @@ use inc::Module::Install;
 # Define metadata
 name           'Tie-Handle-TtyRec';
 all_from       'lib/Tie/Handle/TtyRec.pm';
+githubmeta;
 
 requires       'parent';
 requires       'Symbol';
