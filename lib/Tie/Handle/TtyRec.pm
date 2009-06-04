@@ -2,7 +2,7 @@
 package Tie::Handle::TtyRec;
 use strict;
 use warnings;
-use parent 'Tie::Handle';
+use base 'Tie::Handle';
 
 use Symbol;
 use Time::HiRes 'gettimeofday';
