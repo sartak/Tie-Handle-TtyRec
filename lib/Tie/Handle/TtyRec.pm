@@ -1,4 +1,3 @@
-#!perl
 package Tie::Handle::TtyRec;
 use strict;
 use warnings;
