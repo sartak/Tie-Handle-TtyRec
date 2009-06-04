@@ -7,6 +7,8 @@ use Symbol;
 use Time::HiRes 'gettimeofday';
 use Carp 'croak';
 
+our $VERSION = '0.03';
+
 sub new {
     my ($class, $filename) = @_;
     my $symbol = Symbol::gensym;
@@ -45,17 +47,13 @@ sub CLOSE {
     close $self;
 }
 
+1;
+
+__END__
+
 =head1 NAME
 
 Tie::Handle::TtyRec - write a ttyrec
-
-=head1 VERSION
-
-Version 0.03 released ???
-
-=cut
-
-our $VERSION = '0.03';
 
 =head1 SYNOPSIS
 
@@ -135,6 +133,4 @@ This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 
 =cut
-
-1;
 
