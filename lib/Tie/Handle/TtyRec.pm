@@ -89,42 +89,6 @@ L<Term::TtyRec>, L<Term::TtyRec::Plus>
 
 Shawn M Moore, C<< <sartak at gmail.com> >>
 
-=head1 BUGS
-
-No known bugs.
-
-Please report any bugs through RT: email
-C<bug-tie-handle-ttyrec at rt.cpan.org>, or browse
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Tie-Handle-TtyRec>.
-
-=head1 SUPPORT
-
-You can find this documentation for this module with the perldoc command.
-
-    perldoc Tie::Handle::TtyRec
-
-You can also look for information at:
-
-=over 4
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/Tie-Handle-TtyRec>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/Tie-Handle-TtyRec>
-
-=item * RT: CPAN's request tracker
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Tie-Handle-TtyRec>
-
-=item * Search CPAN
-
-L<http://search.cpan.org/dist/Tie-Handle-TtyRec>
-
-=back
-
 =head1 COPYRIGHT AND LICENSE
 
 Copyright 2007-2009 Shawn M Moore.
