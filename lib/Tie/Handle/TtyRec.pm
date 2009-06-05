@@ -87,7 +87,7 @@ L<Term::TtyRec>, L<Term::TtyRec::Plus>
 
 =head1 AUTHOR
 
-Shawn M Moore, C<< <sartak at gmail.com> >>
+Shawn M Moore, C<sartak@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
