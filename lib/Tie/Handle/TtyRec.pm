@@ -7,7 +7,7 @@ use Symbol;
 use Time::HiRes 'gettimeofday';
 use Carp 'croak';
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 sub new {
     my ($class, $filename) = @_;
