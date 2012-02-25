@@ -30,7 +30,7 @@ sub TIEHANDLE {
 }
 
 sub READ {
-    croak "Cannot read from a Tie::Handle::TtyRec::Write";
+    croak "Cannot read from a Tie::Handle::TtyRec";
 }
 
 sub WRITE {
