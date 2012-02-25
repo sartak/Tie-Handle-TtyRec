@@ -10,18 +10,20 @@ use Carp 'croak';
 our $VERSION = '0.04';
 
 sub new {
-    my ($class, $filename) = @_;
+    my ($class, $filename, %params) = @_;
     my $symbol = Symbol::gensym;
 
-    tie(*$symbol, __PACKAGE__, $filename);
+    tie(*$symbol, __PACKAGE__, $filename, %params);
 
     return $symbol;
 }
 
 sub TIEHANDLE {
-    my ($class, $filename) = @_;
+    my ($class, $filename, %params) = @_;
 
-    open(my $self, '>', $filename)
+    my $mode = $params{append} ? '>>' : '>';
+
+    open(my $self, $mode, $filename)
         or croak "Unable to open $filename for writing: $!";
 
     $self->autoflush(1);
@@ -71,8 +73,8 @@ data and can be a little fiddly. This module lets you focus on your
 application, instead of making sure your ttyrec headers are perfect.
 
 The usual way to use this module is through its C<new> interface. It will
-clobber the file you decide to record to. A way of allowing you to instead
-append will be included in a future version.
+clobber the file you decide to record to, unless you pass C<< append => 1 >> as
+additional arguments to C<new>.
 
 Each argument to print will be put into its own ttyrec frame, using the current
 time. So, the following will create three separate frames,
