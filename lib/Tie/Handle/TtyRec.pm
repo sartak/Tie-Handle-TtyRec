@@ -37,8 +37,11 @@ sub READ {
 
 sub WRITE {
     my $self = shift;
-    my ($buf) = @_;
-    syswrite $self, pack('VVV', gettimeofday, length $buf) . $buf;
+    my ($buf, $length, $offset) = @_;
+    $offset ||= 0;
+    $length ||= length($buf) - $offset;
+    syswrite $self, pack('VVV', gettimeofday, $length)
+                  . substr($buf, $offset, $length);
 }
 
 sub PRINT {
