@@ -21,7 +21,9 @@ sub new {
 sub TIEHANDLE {
     my ($class, $filename, %params) = @_;
 
-    my $mode = $params{append} ? '>>' : '>';
+    my $mode = -p $filename    ? '+>'
+             : $params{append} ? '>>'
+             :                   '>';
 
     open(my $self, $mode, $filename)
         or croak "Unable to open $filename for writing: $!";
