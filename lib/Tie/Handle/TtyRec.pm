@@ -33,13 +33,15 @@ sub READ {
     croak "Cannot read from a Tie::Handle::TtyRec::Write";
 }
 
+sub WRITE {
+    my $self = shift;
+    my ($buf) = @_;
+    syswrite $self, pack('VVV', gettimeofday, length $buf) . $buf;
+}
+
 sub PRINT {
     my $self = shift;
-
-    local $\;
-    print {$self} map { pack('VVV', gettimeofday, length), $_ }
-                  grep { length }
-                  @_;
+    $self->WRITE($_) for @_;
 }
 
 sub CLOSE {
