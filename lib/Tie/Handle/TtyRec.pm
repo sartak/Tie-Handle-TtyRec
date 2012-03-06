@@ -98,6 +98,10 @@ L<Term::TtyRec>, L<Term::TtyRec::Plus>
 
 Shawn M Moore, C<sartak@gmail.com>
 
+=head1 CONTRIBUTORS
+
+Jesse Luehrs, C<doy@tozt.net>
+
 =head1 COPYRIGHT AND LICENSE
 
 Copyright 2007-2012 Shawn M Moore.
